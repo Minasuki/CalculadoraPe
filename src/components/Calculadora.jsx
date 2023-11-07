@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { TextField, Grid, Typography } from "@mui/material";
+import { TextField, Grid, Typography, Box } from "@mui/material";
+import { principal, segundo } from "./style";
 
 const CalculadoraInventario = () => {
   const [cantidadSeis, setCantidadSeis] = useState(0);
@@ -11,11 +12,13 @@ const CalculadoraInventario = () => {
   const unidadesIndividuales = total % 24;
 
   return (
-    <Grid container spacing={2}>
+    <>
+    <Box sx={principal}>
+    <Grid container spacing={2} sx={segundo}>
       <Grid item xs={12}>
         <Typography variant="h4">Calculadora de Inventario</Typography>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12}>
         <TextField
           label="Cantidad de productos de 6 piezas"
           type="number"
@@ -24,7 +27,7 @@ const CalculadoraInventario = () => {
           fullWidth
         />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12}>
         <TextField
           label="Cantidad de productos de 12 piezas"
           type="number"
@@ -33,7 +36,7 @@ const CalculadoraInventario = () => {
           fullWidth
         />
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12}>
         <TextField
           label="Cantidad de productos de 18 piezas"
           type="number"
@@ -48,6 +51,8 @@ const CalculadoraInventario = () => {
         </Typography>
       </Grid>
     </Grid>
+    </Box>
+    </>
   );
 };
 
